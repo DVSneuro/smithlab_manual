@@ -13,3 +13,4 @@ This work is licensed under a [Creative Commons Attribution 4.0 License][cc-by].
 [lab]: https://sites.temple.edu/neuroeconlab/
 [cc-by]: http://creativecommons.org/licenses/by/4.0/
 [mactex]: http://tug.org/mactex/
+[memoir]: https://ctan.org/pkg/memoir?lang=en
