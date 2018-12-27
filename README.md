@@ -4,7 +4,7 @@ This is the lab manual for the [Smith Lab][lab]. Although it should work for any
 
 The Lab Manual is intended to serve as a guide for how things are expected to work in lab. It generally gets updated at the beginning or end of each term, and works well as an on-boarding document for new people. If anything is unclear or needs updating, please make a note on the relevant section of the Wiki and/or let me know.
 
-Note: Much of the material in this lab manual was taken from [Jonathan Peelle's lab manual][peelle-manual]. For more information about the value of a lab manual, see [Dr. Peelle's blog][peelle-blog]. In addition, I also recommend checking a 2018 editorial from [Dr. Miriam Aly][aly] titled "The key to a happy lab life is in the manual".
+Note: Much of the material in this lab manual was taken from [Jonathan Peelle's lab manual][peelle-manual]. For more information about the value of a lab manual, see [Dr. Peelle's blog][peelle-blog]. In addition, I also recommend checking out a [2018 editorial from Dr. Miriam Aly][aly] titled "The key to a happy lab life is in the manual".
 
 This work is licensed under a [Creative Commons Attribution 4.0 License][cc-by].
 
