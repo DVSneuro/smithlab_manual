@@ -1,20 +1,30 @@
 %!TEX TS-program = xelatex
-% Much of lab manual was taken from Jonathan Peelle's lab manual. 
+% Much of the initial version of this lab manual was taken from Jonathan Peelle's lab manual. 
 % See original source here: https://github.com/jpeelle/peellelab_manual/
 
-\documentclass[letterpaper,12pt,oneside]{memoir}
+\documentclass[letterpaper,11pt,oneside]{memoir}
 \usepackage{color}
+
+%\setromanfont{Cambria}
+\usepackage{xunicode,fontspec,xltxtra} 
+\usepackage{libertine} 
+
 \usepackage[pdftitle={Smith Lab Manual}, pdfauthor={David V. Smith}, colorlinks=true, urlcolor=blue]{hyperref}
+
 \usepackage{multicol}
 \usepackage{array,ragged2e}
 \usepackage{fontspec,xunicode}
 \defaultfontfeatures{Mapping=tex-text}
-\setromanfont{Cambria}
+
 \definecolor{shadecolor}{gray}{0.9}
 \setsecnumdepth{section}
 \maxtocdepth{subsection}
 \usepackage{multicol}
 \usepackage{enumitem}
+
+\usepackage{xurl}
+
+\renewcommand{\UrlFont}{\ttfamily\footnotesize}
 
 \chapterstyle{article}
 
@@ -62,25 +72,43 @@ My overarching goal is to foster an environment of scientific excellence and per
 \item Website: \url{https://sites.temple.edu/neuroeconlab/}
 \item GitHub: \url{https://github.com/DVS-Lab}
 \item Twitter: \url{https://twitter.com/DVSneuro}
-\item Mendeley: \url{https://www.mendeley.com/community/smith-lab-meetings/} 
-\item OSF: \url{https://osf.io/5zq6h/}
+% \item Mendeley: \url{https://www.mendeley.com/community/smith-lab-meetings/} 
+\item OSF: \url{https://osf.io/5zq6h/} \footnotesize{[we are working on a better system for using OSF]}
 \end{itemize}
 
 \noindent There are also a couple of sites accessible only by lab members:
 
 \begin{itemize}[noitemsep]
 \item Asana: \url{https://app.asana.com}
-\item Slack: \url{https://neuroeconomicslab.slack.com}
-\item Wiki: \url{https://smithlabwiki.cla.temple.edu} [under construction]
-\item Wiki: \url{https://smithlabinternal.cla.temple.edu} [phasing out]
+\item Slack: \url{https://smithlab-workspace.slack.com}
+\item Wiki: \url{https://smithlab.slab.com/}
 \end{itemize}
 
-In general, firm policies are in the lab manual, whereas ways of implementing those policies (i.e., getting stuff done) should be on the Wiki so that they can be updated by anyone in the lab. Asana organizes tasks that need to be done (and relevant discussions, with the help of Slack) for specific projects, rather than general principles. Any information that is potentially private or sensitive should go in a protected location. (You can read more about various lab resources in \Sref{sec:communicationInLab} on \pref{sec:communicationInLab}.)
+In general, firm policies are in the lab manual, whereas ways of implementing those policies (i.e., getting stuff done) should be on the Wiki so that they can be updated by anyone in the lab. Asana organizes tasks that need to be completed and relevant notes/discussions. And Slack facilitates group communication, announcements, and quick, informal chats. Any information that is potentially private or sensitive should go in a protected location. (You can read more about various lab resources in \Sref{sec:communicationInLab} on \pref{sec:communicationInLab}.)
 
 \begin{shaded}
 \noindent I assume the Lab Manual and Wiki are accurate and clear. This means that you should follow all of the policies and protocols contained in the manual and Wiki. If you notice something that seems to be wrong (or missing), please let me know (for the lab manual) or change it yourself (for the wiki). If there is something in the lab manual or wiki that you notice people aren't doing, please bring this up at lab meeting, or to me, privately---don't assume this is okay (it's not).
 \end{shaded}
 
+%%% TEMPORARY ADDITION %%% 
+\chapter{COVID-19 Disclaimer} 
+We are in the middle of a pandemic. Everything is different. All in-person data collection has been halted since March, and we will potentially resume some limited form of data collection in the Fall semester. In addition, we've also been unable to have in-person meetings. Instead, everything happens on Zoom. That sucks and makes many things more challenging than normal. 
+
+Although these lab struggles are a relatively small part of this unprecedented situation, I want to preface the rest of this Lab Manual with a few thoughts: 
+
+\begin{itemize}
+\item More than ever, we must be flexible and accommodating. Technology happens. Life happens. 
+\item We must adjust expectations and communicate issues as they arise. We can troubleshoot the issues and adjust as needed.
+\item We must be more communicative than ever. Fortunately, we have good systems in place to articulate goals and plans (e.g., Asana) and share knowledge (e.g., Lab Wiki), but it is critical that everyone use these systems as intended.
+\item We have to be more patient than usual. Doing your work remotely isn't easy and the millions of other things happening during this pandemic can and do make working extra challenging. 
+\item We must be more creative and open to new ideas than usual. Whether it's an idea for online experiment, secondary analyses of existing data, or simply an alternative lab meeting format, we will try new things. Some of those things will work and be fun or useful. 
+\end{itemize}
+
+As a result of COVID-19, we have generally been meeting more (especially over the summer) to make sure everyone is in touch and connected. We have also experimented more with variants of the \href{https://labscrum.org/}{Lab Scrum} approach, which basically entails shorter but more frequent meetings and updates. We will continue to assess what works and adapt as needed.
+
+\begin{shaded}
+\noindent Working in a pandemic is challenging. We're all in this together, so don't hesitate to communicate how I can be a better mentor for you during these times. We will get through it.
+\end{shaded}
 
 %%%%%%%%%%%%%%%%%%%%%
 \chapter{About the lab} 
@@ -93,12 +121,20 @@ Grant funding supplies the much of resources needed to conduct our research, inc
 
 Our recent and current grant funding includes:
 
-\begin{itemize}
+\begin{enumerate}
 \item Targeted Small Grant Award from OVPR at Temple University titled ``Modulating Individual Differences in Reward Sensitivity with Transcranial Current Stimulation" (active: 2018-01-01 to 2019-12-31). This project examines how transcranial current stimulation impacts reward processing and decision making.
-\item R21-MH113917 from NIMH titled ``Remote Modulation of Reward Circuits with Noninvasive Brain Stimulation" (active: 2017-07-05 to 2020-04-30). This project is focused on how transcranial alternating current stimulation modulates neural and behavioral responses to reward. 
+\item R21-MH113917 from NIMH titled ``Remote Modulation of Reward Circuits with Noninvasive Brain Stimulation" (active: 2017-07-05 to 2021-04-30). This project is focused on how transcranial alternating current stimulation modulates neural and behavioral responses to reward. 
 \item Pilot Grant from SRNDNA titled ``Social Reward and Aging: Identifying the Neural Underpinnings of Peer Influences" (active: 2017-10-01 to 2018-12-31). This project is focused on how the relationship between trust and social closeness changes across the lifespan. 
-\item R03-DA046733 from NIDA titled ``Aberrant Reward Sensitivity: Mechanisms Underlying Substance Use" (active: 2019-05-01 to 2020-04-30). This project examines the relationship between aberrant reward sensitivity, substance use, and neural responses to social and nonsocial reward. 
-\end{itemize}
+\item R03-DA046733 from NIDA titled ``Aberrant Reward Sensitivity: Mechanisms Underlying Substance Use" (active: 2019-05-01 to 2021-04-30). This project examines the relationship between aberrant reward sensitivity, substance use, and neural responses to social and nonsocial reward. 
+\end{enumerate}
+
+In addition to our current and past funding, we also have ongoing work that provide crucial pilot data for pending grants. Remember that all projects are connected to a past, current, or pending grant (i.e., your work is super important and part of a larger puzzle and long-term plan). Our main pending grants are below:
+
+\begin{enumerate}
+\item R01-DA048857 sponsored by NIDA titled ``Parsing Reward with Corticostriatal Network Maps" (duration: 5 years). This project uses existing data sources to examine how corticostriatal connectivity patterns contribute to reward processing and substance use.
+\item R01-AG067011 sponsored by NIA titled ``Social Reward Processing Across the Lifespan: Identifying Risk Factors for Financial Exploitation" (duration: 5 years). This project examines social reward processing across the lifespan and seeks to relate those processes to vulnerability for financial exploitation.
+\item R01-MH124932 sponsored by NIMH titled ``Modulating Reward Processing with Transcranial Current Stimulation" (duration: 5 years). This project uses transcranial current stimulation to investigate the causal mechanisms underlying reward processing.
+\end{enumerate}
 
 Funding from NIH means that work in the lab is supported by the taxpaying public---and we should strive to produce products that show we are using the money wisely. Startup funds should be viewed similarly. 
 
@@ -117,12 +153,13 @@ Our local collaborators (i.e., those at Temple) are in involved in active or pen
 \item Jason Chein
 \item Eunice Chen
 \item Tania Giovannetti
+\item Chelsea Helion
 \item Johanna Jarcho
 \item Vishnu (Deepu) Murty
 \item Michael McCloskey
+\item Tom Olino
 \item Ingrid Olson
 \item Crystal Reeck
-\item Jamie Reilly
 \item Vinod Venkatraman
 \end{itemize}
 \end{multicols}
@@ -148,19 +185,33 @@ We use neuroimaging and noninvasive brain stimulation to understand the neural m
 \label{sec:training}
 %(see \Sref{sec:training} on \pref{sec:training})
 
-Like many organizations, training in the Smith Lab relies heavily on an apprenticeship model, where skills are learned from others who have more experience. Although this can be a little tricky with a young lab, we still try to structure projects where people who are further along in their training share their knowledge (see \Sref{sec:wiki} on (\pref{sec:wiki}) with those who are more junior. We also have basic lab training to get everyone up to speed on what could be consider the prerequisites for the lab, particularly for graduate students (e.g., basic computer skills, basic statistics, and basic neuroimaging skills). Since there are a plethora of resources out there, I strongly encourage you to stick to the specific examples we have on the wiki and organize workshops for content areas that you feel need more attention as a group. I am more than happy to present material in such workshops, as I have done before (e.g., FSL Course Material), and I only ask that others help present some material as well. Of course, you are not expected to be an expert when first presenting new material to the group, but you will learn the most from teaching others.
+Like many organizations, training in the Smith Lab relies heavily on an apprenticeship model, where skills are learned from others who have more experience. Although this can be a little tricky with a young lab, we still try to structure projects where people who are further along in their training share their knowledge (see \Sref{sec:wiki} on (\pref{sec:wiki}) with those who are more junior. If you're learning something from someone who has done something already, you must take notes and improve (or create) the documentation because you are responsible for teaching the next person. This is a vital component of being in the lab. 
+
+Sometimes you might be learning a new skill from someone outside of the lab through a collaboration on one of their projects. Even if it's not \textit{your} project, you should be fully invested in doing all you can do to help with that project, learn that skill, and transmit that knowledge to your lab mates. 
+
+To make general neuroimaging training and collaboration more equitable, you will not be asked to mentor anyone outside the lab unless they have taken my graduate-level \textit{Neuroimaging Methods and Analysis} course or there are other important considerations (e.g., grants, fellowships, etc.). This policy is intended to protect your time and promote foundational training that can lead to fruitful collaborations. 
 
 \subsection{Individual Development Plans}
-Everyone in lab should continuously work with an Individual Development Plan (IDP). I have created a lab-specific IDP that everyone should use and discuss with me on a regular basis. The IDP template for the lab is modeled after the Student Activities Report that was used in my graduate program at Duke, the American Association for the Advancement of Science (AAAS), and also the National Institutes of Health (NIH). 
+Everyone in lab should work with an Individual Development Plan (IDP). In collaboration with other faculty, I have created a general IDP that everyone should use and discuss with me (and your co-mentor, if applicable) each term. The primary point of the IDP are to set out goals and provide clear metrics of success and progress. Other key components of an IDP include self-reflection and self-evaluation, particularly in the areas below:
 
-The core goals of the IDP are to set out long-term and short-goals and provide clear metrics of success and progress. Other key components of an IDP include self-reflection and self-evaluation. Just from reading papers, you should develop a sense of where your peers outside of Temple are in terms of their skills and publication records. Although I think this type of social comparison can be good, I recommend that you primarily take note of where you are today and strive to be better than that tomorrow. If you do that for while, you will be amazed by the progress you've made.
+\begin{itemize}[noitemsep,nolistsep]
+\item \textbf{Accountability}: Participation, preparation, note-taking during meetings, following instructions.
+\item \textbf{Communication}: responding to messages in a timely manner, clearly describing problems and solutions, team leadership.
+\item \textbf{Time management}: Planning for submission deadlines, meeting intermediate goals.
+\item \textbf{Scientific rigor}: Documentation, attention to detail, noticing mistakes, being conversant in the literature.
+\item \textbf{Skill set development}: Computer-based skills, data acquisition, data analysis.
+\item \textbf{Scholarly output}: Writing, talks (in lab meetings or more broadly), posters, journal club leadership.
+\item \textbf{Innovative thinking}: Proactiveness, seeking out solutions, new ideas.
+\end{itemize}
+
+These areas are important to develop and we want to do all we can to help you exceed expectations in each of these areas.
 
 \subsection{Bidirectional Feedback}
 To improve and meet the goals set out in your IDPs, you should expect to receive feedback from me, other faculty, and other trainees/peers (e.g., reviewers, visitors at a poster, etc.). Some of this feedback will be positive and some of this feedback will be negative. Whether you think you are being showered with too much positive or too much negative feedback, please recognize that the goal of the feedback is ultimately the same: that is, help you improve and meet the goals set out in your IDP. 
 
 In general, you will receive the most feedback from me on items that reflect your scholarly output, including fellowship applications, abstracts, posters, talks, and manuscripts. When these things involve other faculty (and they often do), I ask that you wait till you have fully incorporated at least one round of feedback from me before circulating your work with other faculty. Please note that, in general, my feedback will be most helpful if we are not pressed against a deadline (e.g., distributing an abstract to coauthors). And for manuscripts, you should first work with me on a paragraph-level outline (see \Sref{sec:ms_general} on \pref{sec:ms_general}) and reserve a time to discuss feedback in person, especially if it is your first time writing a paper with me.
 
-Importantly, feedback isn't a one-way street, and I welcome your feedback on how I can be a better mentor. Of course, I recognize that giving me feedback may not always be the easiest thing to do. Thus, one simple workaround is anonymous feedback, which is something I first mentioned during a lab meeting back in Summer 2018. Since that time, I've learned that other labs already utilize anonymous feedback\footnote{\url{https://www.sciencemag.org/careers/2019/04/want-become-better-mentor-ask-anonymous-feedback}}, and it is now something that I feel more strongly about. Our initial experimentation with anonymous feedback has been extremely helpful for me.
+Importantly, feedback isn't a one-way street, and I welcome your feedback on how I can be a better mentor. Of course, I recognize that giving me feedback may not always be the easiest thing to do. Thus, one simple workaround is anonymous feedback, which is something I first mentioned during a lab meeting back in Summer 2018. Since that time, I've learned that other labs already utilize anonymous feedback\footnote{\url{https://www.sciencemag.org/careers/2019/04/want-become-better-mentor-ask-anonymous-feedback}}, and it is now something that I feel more strongly about. Our initial experimentation with anonymous feedback has been extremely helpful for me. But naturally, I hope all of you are comfortable giving me direct and candid feedback at any point.
 
 
 %%%%%%%%%%%%%%%%%%%%%
@@ -190,7 +241,7 @@ We expect each other to:
 \item Adhere to ethical principles described by American Psychological Association \href{https://www.apa.org/ethics/code/}{(APA)} and Society for Neuroscience \href{https://web.sfn.org/sfn/member-center/professional-conduct/sfn-ethics-policy}{(SFN)} and follow the \href{https://ori.hhs.gov/ori-introduction-responsible-conduct-research}{Responsible Conduct of Research (RCR)} more generally. 
 \end{itemize}
 
-We should also expect everyone to have a professional and accurate online presence. If you have an online profile somewhere (e.g., LinkedIn, NeuroStars, ResearchGate, Twitter, Google Scholar, etc.), keep it up to date and professional. Remember, we all represent the lab and the lab represents us. Let's make sure we have an excellent online presence.
+We should also expect everyone to have a professional and accurate online presence. I recommend that you have at least one professional online profile somewhere (e.g., NeuroStars, OSF, ResearchGate, Twitter, Google Scholar, etc.) that you keep it up to date. Remember, we all represent the lab and the lab represents you. Let's make sure we have an excellent online presence.
 
 
 \subsection{Small picture}
@@ -203,6 +254,7 @@ We're sharing a relatively small space, so please be thoughtful of others, inclu
 \item Avoid wearing strong perfumes/colognes/etc.\ in the lab (for the sake of your coworkers and our participants).
 \item Keep the lab neat---especially in the entryway area. Items left unattended may be cleaned, reclaimed, or recycled.
 \item Turn off or minimize notifications on your devices. Although it is important to be available for emergencies, you might find yourself sifting through countless notifications and attending to nonstop alerts if the notification settings on your devices aren't constrained.
+\item Take personal phone calls and conversations outside the lab. Others are trying to focus on their work.
 \end{itemize}
 
 
@@ -224,7 +276,7 @@ You can expect me to:
 
 \section{Postdocs}
 
-I expect postdocs to move towards being more PI-like, including giving talks, writing grants, and cultivating an independent research program (while still supporting the lab's research). And, to have (or acquire) the technical and open science skills listed for PhD students, below.
+We don't currently employ any postdocs, but I expect postdocs to move towards being more PI-like, including giving talks, writing grants, and cultivating an independent research program (while still supporting the lab's research). And, to have (or acquire) the technical and open science skills listed for PhD students, below.
 
 %If you are supported by a specific grant, which will usually be the case, [you shouldn't expect to stay past that grant?]
 
@@ -254,7 +306,40 @@ Note that if you're a PhD student in the Department of Psychology, then you shou
 
 \section{Masters students}
 
-In general, Master's students should strive to function as if they were a PhD student. But, at a minimum, I expect masters students will be organized and independent, and manage their research time and classroom responsibilities so that they complete a project by the end of their second year, which requires being somewhat strategic in the topic we pick. The written report and/or poster is typically due by the middle of April. Your time as a Masters student in my lab should outlined in your Individual Development Plan. 
+In general, Master's students should strive to function as if they were a PhD student. But, at a minimum, I expect masters students will be organized and independent, and manage their research time and classroom responsibilities so that they complete a project by the end of their second year, which requires being somewhat strategic in the topic we pick. The written report and/or poster is typically due by the middle of April. Your time as a Masters student in my lab should outlined in your Individual Development Plan and you should plan to have due dates and goals outlined on your Asana (e.g., see Table \ref{table:deadlines}).
+
+\section{Undergraduate students}
+
+Undergraduate students play a vital role in the lab. In return, the lab can also play a vital role in professional development and career opportunities by providing measurable research experience, authorship on posters (and potentially papers), and letters of recommendation. Of course, what you get out of the lab depends on what you put into the lab, and most successful undergraduates work in the lab for at least two semesters. 
+
+An undergraduate student can be involved in the lab in a number of ways, including Honors projects and independent study projects (e.g., course credit), student worker, and internships. But, given that we have limited time and resources, we unfortunately cannot accept or keep all undergraduates. Nevertheless, we do review applications as they come in and we recognize that some undergraduates may not be able to commit 10 hours/week. Thus, we are in the process of creating different ``tracks'' that would be suitable for different goals and situations.\footnote{As a first-generation college student, I can definitely attest to the importance of being open with providing opportunities to get involved or simply shadow someone. Personally, I was very lucky to wind up in a lab, get some experience, and learn that I enjoyed it. Let's remove ``lucky'' from the equation as best we can.}
+
+In all cases, I expect undergraduates to be utterly reliable and willing to help with whatever projects need it. At a bare minimum, reliability includes showing up on time, maintaining your hours on the lab calendar, and making sure that all of your work is accurate (double-check everything). If you find yourself doing anything other than lab work while sitting in my lab, then you are in the wrong place and should pursue other interests.
+
+Finally, if you are working on a senior project (e.g., an Honors project or a Neuroscience Distinction project), please make a check list with planned due dates (e.g., see Table \ref{table:deadlines}), and keep this updated throughout the year. You must work with someone more senior (a graduate student, postdoc, or research assistant) and me to outline goals and track progress on Asana.
+
+% table describing deadlines for student projects
+\begin{table}
+\centering
+\caption{General deadlines for short-term research projects}
+\begin{tabular}{lcc}
+\toprule
+& Senior honors & Masters\\
+\midrule
+Topic picked& \multicolumn{2}{c}{Spring of prior year}\\
+Stimulus materials finalized& \multicolumn{2}{c}{September 1}\\
+IRB approval finalized& \multicolumn{2}{c}{September 15}\\
+Data collection begun& \multicolumn{2}{c}{October 1}\\
+15 minute lab talk on background& \multicolumn{2}{c}{Fall semester}\\
+Draft of introduction and methods& \multicolumn{2}{c}{December 20}\\
+Complete written draft& March 1& April 1\\
+Practice talk& April 1 & April 15\\
+Final written draft& End of April & End of April\\
+Oral presentation& After Spring break & Early May\\
+\bottomrule
+\end{tabular}
+\label{table:deadlines}
+\end{table}
 
 
 \section{Employees}
@@ -291,14 +376,6 @@ Sick time should also be requested over email. Per HR policy, full-time employee
 There are many resources and benefits available through \href{https://www.temple.edu/faculty-and-staff/working-temple/human-resources}{human resources}. These policies are spelled out to some degree on the HR website and in the \href{http://www.temple.edu/hr/departments/employeerelations/documents/Employee_Manual_Feb_2016.pdf}{Employee Manual}, and I can also put you in touch with people in the department or HR who can offer guidance.
 
 
-\section{Undergraduate students}
-
-Undergraduate students play a vital role in the lab. In return, the lab can also play a vital role in professional development and career opportunities by providing measurable research experience, authorship on posters (and potentially papers), and letters of recommendation. Of course, what you get out of the lab depends on what you put into the lab, and most successful undergraduates work in the lab for at least two semesters. \textbf{Whether you stay in the lab for two or eight semesters, I encourage you to leave your mark and try to walk away with more than a line on your resume.}
-
-An undergraduate student can be involved in the lab in a number of ways, including independent study projects (e.g., course credit), student worker, and internships. But, given that we have limited time and resources, we unfortunately cannot accept or keep all undergraduates. We therefore consider new undergraduates at the beginning of each term. Importantly, each new undergraduate must attend a mandatory orientation session and serve a probationary term (6 weeks) before advancing further in the lab.\footnote{Many thanks to Victoria Kelly for honing these procedures and developing the orientation materials in Spring 2019.}
-
-I expect undergraduates to be utterly reliable and willing to help with whatever projects need it. At a bare minimum, reliability includes showing up on time, maintaining your hours on the lab calendar, and making sure that all of your work is accurate (double-check everything). In most cases, undergraduates will be directly mentored by a graduate student and/or research assistant. Importantly, your mentor should work with you to create an Individual Development Plan and this plan should be reviewed with me at least once a year.
-
 
 \section{University policies}
 
@@ -314,7 +391,7 @@ University policy requires that if any faculty member (such as me) becomes aware
 %%%%%%%%%%%%%%%%%%%%%
 \chapter{Communication}
 
-Whether you pursue academia or industry, communication both within and outside your organization is critical. In this chapter, I describe how we communicate with those inside of our lab (e.g., fellow trainees) and those outside of our lab (e.g., readers of our papers). Of course, some modes of communication are for everyone, 
+Whether you pursue academia or industry, communication both within and outside your organization is critical. In this chapter, I describe how we communicate with those inside of our lab (e.g., fellow trainees) and those outside of our lab (e.g., readers of our papers). Of course, some modes of communication are for everyone.
 
 \section{Communication within the lab}
 \label{sec:communicationInLab}
@@ -324,7 +401,7 @@ I am usually busier than I'd like to be, and as a result have less time for talk
 \begin{enumerate}
 \item Be proactive---tell me what you need. This includes coming to knock on my door even if it seems like you are interrupting, revising your IDP whenever necessary, emailing me to set up a time to meet, or catching me before or after lab meeting. In all likelihood I will not check in with you as often as I'd like, so it is up to you to make sure nothing falls through the cracks.
 \item Write things down and remind me what we've talked about. I would love to remember everything we decided when we met last, but this doesn't always happen. Don't hesitate to bring me up to speed when we meet. Even if I already remember what we are talking about, a couple of introductory topic sentences will help get me in the right frame of mind.
-\item Read all of the lab documentation: this lab manual, the lab wiki, and search through Asana if you have a question or issue. You are responsible for knowing what is in each of these places, following the rules and guidelines we have set up, and notifying someone if you find incorrect or unclear information (or if you have questions).
+\item Read all of the lab documentation: this lab manual and the lab wiki. You are responsible for knowing what is in each of these places, following the rules and guidelines we have set up, and notifying someone if you find incorrect or unclear information (or if you have questions).
 \item I can be the most helpful to everyone if you are a little bit strategic in what you ask me. Please check the lab wiki, other people in the lab, and a Google search before shooting me off a question (see Figure~\ref{fig:decisiontree}).
 \end{enumerate}
 
@@ -343,7 +420,7 @@ Metaphorically my door is always open, but sometimes my door is, physically, clo
 \item If we don't have a meeting scheduled, a closed door generally means I am trying to do some writing and should not be interrupted. Of course, if it's an emergency, please knock anyway. Otherwise, please send me a direct message on Slack or try another time.
 \end{itemize}
 
-\subsection{Lab meeting}
+\subsection{Lab meetings}
 Regular lab meetings are essential for ensuring that current projects are moving forward and that future projects are being planned carefully. Remember, the lab is basically a small business that seeks to produce high-quality publications and highly-skilled trainees---i.e., you! We also use lab meetings to discuss administrative issues (e.g., IRB modifications) and practical issues (e.g., responsible conduct of research). In some case, we may also use lab meetings for workshops that introduce or reinforce skills (e.g., a NiPype tutorial), though I recommend allocating more time for workshops. 
 
 Our lab meetings are generally 1-1.5 hours. During that time, \textbf{we have one or two presenters who are responsible for setting the agenda and sharing materials well in advance of the meeting}: 1) at a minimum, one person leads a journal club on a recent empirical paper that is relevant to the lab; and 2) another person presents their work, a practice talk, a project proposal, a tutorial, or a general-interest topic that is worth a group discussion. Example general-interest topics might include a recent influential review paper, responsible conduct of research, professional development, or innovative research practices. Unless you have clinical duties or class conflicts, regular attendance and participation is expected of everyone, especially those of you working to make a sustained intellectual contribution to a project (see \Sref{sec:authorship} on \pref{sec:authorship}).
@@ -353,23 +430,34 @@ Since scheduling lab meetings can be tough and everyone might not be able to mak
 You should treat the lab meeting (and other research meetings) like a class: \textbf{be prepared, be present, and be engaged with the discussion}. This means you should read the material beforehand and put away your laptop during the meeting. If you're scheduled to present and you need to cancel or postpone, please give the group at least 72 hours notice. 
 
 \subsection{Individual Meetings}
-Although you will regularly give updates on your project (and particularly preliminary results) in lab meetings, it can also be very helpful for me to have semi-regular individual meetings with you about your project. During my PhD, my advisor had regular weekly meetings to discuss the data we were collecting/analyzing, projects we were planning, and the papers we were writing---but I am not my advisor! For me, it is better to set up times where you know you can find me in lab and/or schedule individual meetings on an \textit{ad hoc} basis. At the end of the day, I'd like to make sure I'm seeing progress with your project (e.g., new results, new ways to contextualize the results, new directions for the research program, etc.) at least every two weeks. Although I will usually find you and get updates because I'm very curious to see your results and discuss your ideas, it is generally up to you to make sure these individual meetings happen on a semi-regular basis. These individual meetings are an ideal time to get feedback on your work.
+You will regularly give updates on your project (and particularly preliminary results) in lab meetings and other research meetings, but it is also extremely helpful to have regular individual meetings with me\footnote{I experimented one semester with not having these individual meetings, and I learned that everything works better with them. But, I will not have these regular individual meetings with people outside the lab unless they are spending a significant fraction of their effort on a project tied to the lab. Unfortunately, there is just not enough time in the day to have regular individual meetings with everyone who might want them and doing so would detract from the time I can spend on the lab.}. You should prepare for these meetings and expect to spent 30 minutes (or longer) going through your tasks, goals, progress, and issues. We can cover a lot of ground in 30 minutes, and we should aim to use your Asana as the agenda. So, during these meetings, have your Asana open and add tasks and notes/comments as necessary. 
 
-In general, please do not use individual meetings to discuss technical issues that would be better for a workshop. If there's a concept or technical procedure that you're struggling with (e.g., scripting first-level analyses in FSL), chances are that you are not alone and others would benefit from a workshop (or even a refresher). Discussing these types of things as a group helps us build expertise, improve our documentation, and develop mentors for the next generation of trainees who will have the same questions (see \Sref{sec:training} on \pref{sec:training}). That said, we are still a young lab, so please don't hesitate to come grab me for analysis help, post to the `help-with-analyses` channel on Slack, or post to the TUBRIC Support Forums. I want to help your work move forward while also preparing you to help the next person.
+In general, please do not use individual meetings to discuss technical issues that would be better for a workshop. If there's a concept or technical procedure that you're struggling with (e.g., scripting first-level analyses in FSL), chances are that you are not alone and others would benefit from a workshop (or even a refresher). Discussing these types of things as a group helps us build expertise, improve our documentation, and develop mentors for the next generation of trainees who will have the same questions (see \Sref{sec:training} on \pref{sec:training}). That said, we are still a young lab, so please don't hesitate to come grab me for analysis help, post to the `troubleshooting` channel on Slack, or post to the TUBRIC Support Forums. I want to help your work move forward while also preparing you to help the next person.
+
+\subsection{Lab Wiki}
+\label{sec:wiki}
+%(see \Sref{sec:wiki} on (\pref{sec:wiki})
+
+The lab wiki is our shared collection of knowledge about how to get things done in the lab. The lab manual you are reading now is ``top down'', in that I am writing the whole thing myself. By contrast, the wiki is a shared resource to which everyone can---and should---contribute. A good rule of thumb is that if you need to figure out how to do something, someone else in the lab will someday need to do the same thing. Whenever possible please document what you figure out on the wiki, including updating old sections which may no longer be relevant. Please encourage each other (and those working with you) to do the same!
+
+Minimally, I expect you to improve existing documentation on the wiki as needed and also maintain your own project page. Your project page will detail all of the relevant aspects of your project that would allow someone else (e.g., you in 2 years or me today) to reproduce what you are doing. You can start with our template for this, but it's very important to keep it up to date and add notes and insights and they materialize. Thus, your Slab page for your project will also serve as your shared lab notebook that will certainly help others when one of your insights comes up in one of their searches. Remember, share your knowledge and use the wiki to facilitate that process.
 
 
 \subsection{Asana and Slack}
-Asana and Slack are the main tools for lab communication and are preferred to email in almost every situation. Please help me by keeping these up to date! A few thoughts and tips:
+Asana and Slack are the main tools for lab communication and are preferred to email in almost every situation. Please help me by keeping these up to date! A few thoughts and tips (find more on the Lab Wiki):
 
 \begin{itemize}
-\item Asana is basically a to-do list, which makes it easy to use. My advice is to keep it simple: add a task, description, due date, and tag whoever needs to know about its status. Then work toward completing that task.
+\item Asana is just a to-do list, which makes it easy to use. My advice is to keep it simple: add a task, a description, due date, and tag whoever needs to know about its status. Then work toward completing that task. Your tasks should be ``SMART'' goals, which stands for Specific, Measurable, Attainable, Relevant, and Time-based. 
 \item Be realistic and flexible with due dates in task in Asana. Of course, you should try to get things done in a timely manner---while recognizing that some tasks necessarily have to be completed before other tasks---but sometimes life happens and you have to adjust.
-\item If you're leading a project in the lab, please make sure your project is listed under one of our teams on Asana. Since we're cheap, we have a few different teams (each team is capped at 15 people), so add your project under the appropriate team and make sure anyone involved in your project is also on that team. 
-\item With Asana, all project tasks and to-do items should be under your project. Tasks that aren't linked to your project (e.g., administrative items) should be find a home under a pre-existing project. 
-\item In Slack, try to avoid direct messages for project-related discussions or questions. Instead, use (or create) a Slack channel for your general topic, which will naturally overlap with other aims/directions of the lab. Creating (or using) a general channel that includes others allows you to get feedback and perspectives other folks in lab, potentially forming new collaborations. In addition, using the threads feature on Slack can also help keep conversations organized.
+\item With Asana, we prefer to organize based on people, rather than specific projects, even though it is often the case that two (or more) people will be working on the same project. This organization scheme is much easier for me, and it's also helpful for others to see what's on your plate. If two people are working on the same task/goal, they can both have that on their Asana page.
+\item In Slack, try to avoid direct messages for project-related discussions or questions. These questions can generally be asked in an open channel that others can see. Also, when using Slack, please use threads to help keep conversations organized and avoid spamming others.
 \item Use the default settings for notifications in Slack and Asana. They are defaults for a reason. But, if the extra emails clutter your Inbox, take a few minutes to set up a filter (very easy to do in Gmail).
 \item Use Asana and Slack together. You can integrate them with a few simple clicks. I will often create and assign tasks directly from Slack\footnote{If you wind up with multiple Asana accounts tied to different emails, you integrate them pretty easily.}.
 \end{itemize}
+
+\begin{shaded}
+\noindent I have a love-hate relationship with Slack. While I prefer it over email for lab communication and announcements, I've noticed that it can be easy for folks to miss messages, depending on their settings and individual habits. So, don't be shy about voicing your opinion about what would optimize the signal to noise ratio on each of our Slack channels. In general, using Slack---or any tool for communication---should not be a real barrier for your progress or growth.
+\end{shaded}
 
 \subsection{Email}
 When contacting me, please use Asana/Slack whenever possible. I will try to reply to emails when I can but please don't use it for anything urgent if you can avoid it. If you need to reach me urgently you can call/text my cell phone, or call the lab (where someone can get in touch with me). 
@@ -381,6 +469,8 @@ I would like to use Asana/Slack as much as possible for lab communication, but s
 Accurate calendars are extremely important in managing lab space and resources. We have a Lab Attendance calendar (for noting when you're away) and a Lab Resources calendar (for resources like laptops and testing rooms). It is crucial that everyone use the calendars regularly and ensure they are accurate. Use the lab calendars and follow the instructions described on the wiki.
 
 If you think it will be helpful, you are also welcome to share your personal calendar with me, and I will try to attend to it. However, it is generally best to use the Lab Attendance calendar to indicate when you're away or otherwise unavailable. (You may also consider using away messages on Slack.)
+
+Of course, you should also maintain your meetings and other commitments in your own calendar. When I set up a meeting with you, you will often get a calendar invite email from Gmail. Once you click the ``yes'' button, that event is in your calendar and there will be little to no confusion about the meeting time. 
 
 
 %\subsection{Cubbies}
@@ -487,19 +577,9 @@ For many conferences, you may want to bring a sign-up sheet where people can req
 \section{Communication with everyone}
 Everything we do should be sharable with other researchers and the public. I want everyone to assume that all of their notes, instructions, data, and results will be publicly-accessible in the near future (see \Sref{sec:openscience} on \pref{sec:openscience}). 
 
-\subsection{Lab Wiki}
-\label{sec:wiki}
-%(see \Sref{sec:wiki} on (\pref{sec:wiki})
+%\subsection{Open Science Framework}
 
-The lab wiki is our shared collection of knowledge about how to get things done in the lab. The lab manual you are reading now is ``top down'', in that I am writing the whole thing myself. By contrast, the wiki is a shared resource to which everyone can---and should---contribute. A good rule of thumb is that if you need to figure out how to do something, someone else in the lab, department, or community, may someday need to do the same thing. Whenever possible please document what you figure out on the wiki, including updating old sections which may no longer be relevant. Please encourage each other (and those working with you) to do the same!
-
-We currently have two wikis, though we are in the process of simplifying. First, we have an Internal Wiki\footnote{\url{https://smithlabinternal.cla.temple.edu}} that everyone in lab can access and edit. However, you can only edit the internal wiki from on campus, which makes it harder to use on a regular basis. In addition, only authorized users can see its contents. So, this internal wiki may not have a good function beyond being a testing ground and we will abandon it soon since it is not practical. Second, we have a Public Wiki\footnote{\url{https://smithlabwiki.cla.temple.edu}} that mirrors much of the same content as the Internal Wiki, but it is public facing and can be edited from anywhere. Please remember that it is important to \textbf{never put private or sensitive information on the wiki}. 
-
-Eventually, all of the information on the Public Wiki will be publicly accessible, which means you can share a link with a colleague that describes how you did a specific thing (e.g., converting your data to BIDS format) rather than having a meeting with them. Of course, meetings are great and helpful, but we tend to have way too many meetings in academia, and often an email or wiki page will suffice for procedural information or step-by-step how-to guides. 
-
-\subsection{Open Science Framework}
-
-We also use the Open Science Framework (OSF) for organizing (and sharing) materials and documentation related to our projects. Your OSF project pages can serve as a lab notebook and centralized storage area for sharing things related to your project (e.g., posters and preprints). When making your project page, please follow the guidelines on the main Project page: \url{https://osf.io/myxet/wiki/home/}. If someone contacts me for additional information about one of our projects, my hope is that I can easily find the correct OSF page and send them a shareable link.
+We generally use the Open Science Framework (OSF) for organizing (and sharing) materials and documentation related to our projects. To be honest, we don't really have a great system worked out for this and we've been trying for a few years. At this point, it is likely something that is best done during project planning (e.g., if you are submitting a pre-registration through OSF) or right before manuscript submission (e.g., if you are using OSF to share materials or post a preprint). At the end of the day, it is easy enough to simply link your OSF project to the current \href{https://osf.io/myxet/}{Smith Lab} page to help keep everything together and easy to find when necessary. The reason we do this is simple: If someone contacts me for additional information about one of our projects, my hope is that I can easily find the correct OSF page and send them a link with everything. And in an ideal world, this OSF link will already be in your paper and nobody will ever have to request our materials. 
 
 
 %%%%%%%%%%%%%%%%%%%%%
@@ -517,7 +597,7 @@ When collecting data, please use simple checklists to ensure that everything get
 \section{Open, accurate, and reproducible science}
 \label{sec:openscience}
 
-For lab manuscripts, we go through a paper checklist created by Jonathan Peelle\footnote{\url{https://github.com/jpeelle/paperchecklist}} that includes sections on open science and statistics to encourage us to continually keep these issues in mind.
+For lab manuscripts, it can be instructive to go through a paper checklist created by Jonathan Peelle\footnote{\url{https://github.com/jpeelle/paperchecklist}} that includes sections on open science and statistics. We don't always do this prior to submission, but it can help encourage us to continually keep these issues in mind.
 
 
 \subsection{Open science}
@@ -537,9 +617,9 @@ In pursuit of this high level of organization and documentation, lab members wil
 
 \subsection{Accurate science}
 
-A key part of accuracy is anticipating and avoiding ``adverse events'' (including near misses), and creating structures in the lab that facilitate a high level of reliability.
+A key part of accuracy is anticipating and avoiding problems, and creating structures in the lab that facilitate a high level of reliability.
 
-Inspired by a blog post on reliability in the lab\footnote{\url{http://jeffrouder.blogspot.com/2015/03/is-your-lab-highly-reliable.html}} we have a page on the lab wiki for documenting adverse events. Such events will first be posted to the `adverse-events` channel in Slack and then be discussed at lab meeting to make sure none slip through the cracks. Examples of adverse events include:
+Inspired by a blog post on reliability in the lab\footnote{\url{http://jeffrouder.blogspot.com/2015/03/is-your-lab-highly-reliable.html}} we have a page on the lab wiki for documenting problems (this page is titled ``Mistakes to Avoid''). These ``Mistakes to Avoid'' should be discussed at lab meeting to make sure none slip through the cracks. Examples of problem events include:
 
 \begin{itemize}
 \item Any of the lab computers malfunctioning
@@ -617,7 +697,7 @@ We pay our subjects in pre-filled Visa debit cards. One of the lab members check
 \section{Lab notebook}
 \label{sec:lab_notebook}
 
-Anyone conducting an independent research project should have a lab notebook for keeping track of discussions, experiments, and taking notes. You should use an electronic lab notebook (ELN) as your primary lab notebook. This ELN could be a wiki page under the ``Notes and Documentation" component on your OSF Project page (this wiki page can be private and can be set up as diary with date entries\footnote{\url{http://help.osf.io/m/collaborating/l/524109-using-the-wiki}}).
+Anyone conducting an independent research project should have a lab notebook for keeping track of discussions, experiments, and taking notes. In practice, your Lab Notebook will probably consist of handwritten notes on a piece of paper, your comments in Asana, and your project page in Slab. At the end of the day, I don't care where you initially store your notes, but it is very important that all of your project-related notes and insights make it to your project page on the wiki. Again, this helps you effortlessly share your knowledge and insights with your lab mates (and yourself 6 months from now). 
 
 \section{Computers and data}
 
@@ -633,7 +713,7 @@ Anyone conducting an independent research project should have a lab notebook for
 Always assume that as soon as you turn your back the computer on which you have been working will explode.Thinking such dire thoughts will make it easier to follow these guidelines:
 
 \begin{itemize}
-\item If you save files to the shared lab drive (the S drive), backup will automatically happen. You can also use Google Drive and their File Stream program (we have unlimited space on our Team Drive). 
+\item If you save files to the shared lab drive (the S drive), backup will automatically happen. You can also use Google Drive and their File Stream program (we have almost unlimited space on our Team Drive, though it is capped at 400K files). 
 \item Data from participants is irreplaceable and should be removed from testing computers immediately following testing and onto Google Drive.
 \item \textbf{Be sure to constantly push changes to scripts up to GitHub}. Your scripts and code are almost as valuable as participant data. There is no excuse for losing scripts or code, so please use GitHub for everything.
 \item When working on manuscripts, be sure to use Dropbox, Google Drive, or Box so that your files are backed up and accessible anywhere.
@@ -658,6 +738,10 @@ Also note that being an author on a poster (or abstract) at a scientific meeting
 This doesn't mean that as an undergraduate student or research assistant you can't be an author on a paper. Of course, if the study goes well and you are involved, you might be. However, you will need to know enough (or learn enough) about the subject to understand what we've done, and to significantly contribute to the writing. I won't add you to a paper just because I like you and want to help you out; I {\itshape will} consider giving you the opportunity to be involved to a degree that you have earned authorship, if you are willing to take on the challenge.
 
 Typically one person will take on the main responsibility for writing the paper, and this person will be the first author. However, as noted above, I expect all authors to contribute to the writing of the manuscript. This contribution could take the form of helping structuring arguments, identifying key citations, and developing paragraph-level outlines. Once we have clear, paragraph-level outlines, it is easier to split some of the writing responsibility (e.g., a minor author might be more able to write a specific paragraph in the Discussion, if it is more within his/her expertise).
+
+As papers work their way through the lengthy publication process (which can be years), it is sometimes possible that authorship may change in a way that reflects the overall intellectual contribution up to publication. For instance, if you're the first author on the initial submission and then you subsequently bail and someone else does all of the work to see it published, we will need reconsider authorship order.
+
+With respect to authorship order---and authorship more generally---it can be instructive to think of a histogram plotting the number of hours invested into making a sustained intellectual contribution. Naturally, the first author will have the largest investment. However, it is not unreasonable to see that the 2nd author is putting in at least half as much time as the 1st author. In cases where there's no clear difference between 1st and 2nd author, we can consider assigning co-first authorship (this should be a relatively rare phenomenon). Most papers coming out of the lab will have at least 3 authors and all authors will play an essential role in developing the final product.
 
 I assume that, unless we have talked about it, I will be an author on papers coming out of the lab. This does not mean that you should add me on to papers as a courtesy; it means that I expect you to include me in the process of discussion and writing in a way that merits authorship. In other words, the same approach I take with you.
 
@@ -686,17 +770,17 @@ Anyone who is trying to make a sustained intellectual contribution to a project 
 \item What questions do the papers create?  
 \end{itemize}
 
-There are many different strategies for staying on top of the literature. For years, I've received Table of Content (TOC) emails from various journals each time there's a new issue of the journal. Although this strategy works well for tracking new content and coming across articles you might not normally read, it is easy to neglect these TOC emails and fall behind, especially if you're overzealous and sign up for too many journals. Recently, I've started getting a lot of information from Twitter, \href{http://pubcrawler.gen.tcd.ie/}{PubCrawler} alerts, and from Google Scholar alerts for specific authors---and I share much of what I see directly to the `cool-new-papers` channel on Slack (you should share what you see, too!).
+There are many different strategies for staying on top of the literature. For years, I've received Table of Content (TOC) emails from various journals each time there's a new issue of the journal. Although this strategy works well for tracking new content and coming across articles you might not normally read, it is easy to neglect these TOC emails and fall behind, especially if you're overzealous and sign up for too many journals. Recently, I've started getting a lot of information from Twitter, \href{http://pubcrawler.gen.tcd.ie/}{PubCrawler} alerts, and from Google Scholar alerts for specific authors---and I share much of what I see directly to one of the `papers-*` channels on Slack (you should share what you see, too!).
 
 But, all of these articles can really be overwhelming. So, how can you manage all of this information? Here are my recommendations:
 
 \begin{itemize}
 \item \textbf{Stay calm, and read on!} Budget time for reading papers and synthesizing information, especially when you are in the early days of exploring a new topic or question. 
 \item Set up alerts for \textit{some} journal TOC emails and use PubCrawler and Google Scholar for term- or topic-specific alerts. Also follow folks on Twitter. There are lots of smart people on Twitter who act as filters and disseminate articles (and other information) that you may find useful.
-\item Use reference managing software, such as Mendeley or Zotero (both are free). These programs will help you collect references, add notes, and organize them however you like. You can (and should) also integrate programs like Mendeley and Zotero with your OSF project page.
-\item Add papers you want to discuss at lab meeting to our \href{https://www.mendeley.com/community/smith-lab-meetings/}{lab Mendeley page}. 
+\item Use reference managing software, such as Mendeley or Zotero (both are free). These programs will help you collect references, add notes, and organize them however you like. 
 \item Set aside time each week to review what you've added to Mendeley or Zotero and think about how those papers fit together.
-\item Force yourself to write a cohesive paragraph each month that connects the dots on some of your favorite recent papers. You should be able to use this paragraph in a future class or paper; but even if you can't immediately, you will have at least spent some time practicing your writing and getting your head around multiple papers.
+\item Force yourself to write a couple of cohesive paragraphs each month that connects the dots on some of your favorite recent papers. You should be able to use this paragraph in a future class or paper; but even if you can't immediately, you will have at least spent some time practicing your writing and getting your head around multiple papers.
+\item Develop a habit of sending me a short summary of one paper each week and link it to what you read last week and what you're planning to read next week. This approach will help you remember papers and link them together, and it will also give me an opportunity to give feedback on your writing.\footnote{Stealing this general idea from Deepu Murty.}
 \end{itemize}
 
 \begin{shaded}
@@ -721,7 +805,7 @@ While you're learning to code, keep the following points in mind:
 \item Have a basic sense of how each line of code relates to other lines of code in your script. Everything is connected. 
 \item Paths errors are common. Avoid them by shoring up your understanding directory structures. Every input and output file lives in a specific location that you control. 
 \item Avoid staring at the same error for more than 30 minutes. If you haven't solved it in 30 minutes, switch to some other work or take a walk outside.
-\item \textbf{Don't be shy about asking for help.} Other students/trainees and internet forums (e.g., NeuroStars) are great places to find help. You can also post a quick message to the `help-with-analyses` channel on Slack.
+\item \textbf{Don't be shy about asking for help.} Other students/trainees and internet forums (e.g., NeuroStars) are great places to find help. You can also post a quick message to the `troubleshooting` channel on Slack.
 
 \end{itemize}
 
@@ -731,59 +815,6 @@ While you're learning to code, keep the following points in mind:
 \end{shaded}
 
 
-%%%%%%%%%%%%%%%%%%%%%
-\chapter{Frequently asked questions}
-
-\begin{description}
-\item[Why do we have so many options for communication and documentation?] \hfill
-We use email, Slack, Asana, a lab wiki, and OSF. Each one has a distinct role and function in lab. I also encourage everyone to read (and engage with) multiple neuroimaging analysis forums (e.g., NeuroStars, FSL mailing list, etc.). This may seem like a lot, but I think it's the bare minimum until there's one package/platform that does everything efficiently (suggestions are welcome!). Indeed, I long for the day when there's one lab/project management tool that combines the best of everything into one tidy package, much like \textit{FMRIPREP}\footnote{\href{https://www.biorxiv.org/content/early/2018/07/24/306951}{Estaban et al., (2018). FMRIPrep: a robust preprocessing pipeline for functional MRI.}} when it comes to preprocessing in neuroimaging! 
-\item[How are PhD students supported in Psychology?] \hfill \\
-Students in our program have 9-month stipends. These stipends are supported in three different ways: 1) TA-ships (20 hrs/week); 2) RA-ships (20 hrs/week); and 3) fellowships (e.g., NSF, NRSA, University). Similar mechanisms exist to support students for some or all of the summer. In some cases, students in our lab could be assigned to an RA position in a different lab due to funding, need, and/or interest. At the end of the day, all students are expected to be active researchers and meet program requirements for research, even if they have to TA every semester they are in the lab. Of course, my hope is that I can help students win fellowships or support students on grants because having additional time to do research will lead to a more competitive skillset and publication record by the time you leave the lab.
-\item[Can I be successful if I don't like to code?] \hfill \\
-I'd like to think that everyone can be successful in my lab, but I am convinced that learning to code---and being comfortable with troubleshooting technical issues---will create opportunities and help you have more fun than those who do not become comfortable with coding.
-\item[What if I want to leave academia?] \hfill \\
-There's absolutely no shame in leaving academia\footnote{\url{https://www.nature.com/articles/d41586-018-05838-y}}\footnote{\url{https://sasconfidential.com/2016/02/11/its-ok-to-quit-your-phd/}}. I am more than happy to connect you with friends who have left academia for other pursuits (e.g., data science) at various points in their career (e.g., pre-doc and tenure-track job). 
-\end{description}
-
-\vspace{.2in}
-\noindent \textbf{\large If you are looking at a shared version on Google Drive, please write additional questions here:}
-
-
-%
-%\backmatter % appendices etc, - restart pages?
-
-\chapter{Glossary}
-
-\begin{description}
-
-\item[IRB (Institutional Review Board)] \hfill \\
-The IRB oversees human subjects research and makes sure that research is conducted in a way that protects subjects' safety and privacy. Our lab submits protocols to the IRB which describe the research we want to do; the approved protocol is linked to a particular consent form that subjects sign when they participate, informing them about the study.
-
-\item[PI (principal investigator)] \hfill \\
-In the context of a grant, the PI is the person responsible for making sure the proposed research gets done. More broadly it refers to a researcher who has their own research group or lab (i.e., someone who would be in a position to be a PI on a grant, regardless of whether or not they are currently funded).
-
-\item[study] \hfill \\
-In our lab, a ``study'' refers to an experiment (such as ``Deception.01') that falls under an umbrella IRB project\footnote{Note that we currently have one umbrella IRB that covers everything the lab could possibly do---and I would like to keep it that way.}. This term might be used interchangeably with the term ``project". 
-
-\end{description}
-
-\vspace{.2in}
-\noindent \textbf{\large If you are looking at a shared version on Google Drive, please make a list of terms you'd like defined (feel free to include a suggested definition):}
-
-
-
-%\chapter{Lab entry form}
-%
-%\chapter{Lab exit form}
-%
-%\chapter{Lab 6-month review}
-
-\chapter*{Reading test}
-\noindent Lab members: If you are looking at a shared version on Google Drive, please add your name below to indicate you have read the current version of the manual and agree to follow these policies. Note that the Lab Manual is easiest view/read with the electronic version since it contains many hyperlinks. Also note that latest version of the lab manual is always disseminated to the lab whenever there are substantive updates or near the beginning of academic year\footnote{The full version history of the lab manual is viewable on \href{https://github.com/DVSneuro/smithlab_manual}{GitHub}.} and summaries of key points can always be added to the lab wiki.
-
-\vspace{,5in}
-
-\noindent Date \hspace{.5in} Printed name \hspace{1.5in} Signature\\
 
 
 \end{document}
